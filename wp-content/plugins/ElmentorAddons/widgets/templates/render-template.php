@@ -43,6 +43,7 @@ $max_stars = 5;
             <div class="col-md-6" >
             <div class="wrapperHero d-flex flex-column gap-4">
                 <div class="rating d-flex align-items-center gap-2">
+                    <?php if($rating){?>
                     <div class=" rating-box d-flex align-items-center ">
                        <div class="bg-white rounded-5 gap-1">
                              <img width="24px" height="24px" src="<?php echo plugin_dir_url(__FILE__) . 'assets/image.png'; ?>"/>
@@ -67,14 +68,15 @@ $max_stars = 5;
                                 ?>
                         </div>
                     </div>
-                    <div class="rating mb-0 d-flex gap-2 align-items-center"><span><?php echo $rating?></span> Based on <?php echo $total_reviews?> reviews</div>
+                     <div class="rating mb-0 d-flex gap-2 align-items-center"><span><?php echo $rating?></span> Based on <?php echo $total_reviews?> reviews</div>
+                            <?php }?>
                 </div>
         
                 <div>
-                    <h1 class="headline"><?php echo $title?> <span class="fw-normal"><?php echo $title2?></span></h1>
+                    <h1 class="headline"><?php echo $title ?> <span class="fw-normal"><?php echo $title2?></span></h1>
                     <!-- <h2 class="subheading">with Google's highest Rated Mosquito Company</h2> -->
                     
-                    <div class="services fw-bold"><?php echo $subtitle?></div>
+                    <div class="services fw-bold"><?php echo $subtitle ?></div>
                 </div>
                 
                 <p class="description"><?php echo $description?></p>

@@ -233,7 +233,7 @@ class Elementor_Hero_Section_Widget extends \Elementor\Widget_Base {
 		$this->end_controls_section();
 
 		$this->start_controls_section(
-			'hero_section_style',
+			'marc_section_style',
 			[
 				'label' => esc_html__( 'Style', 'elementor-hero-section-widget' ),
 				'tab' => \Elementor\Controls_Manager::TAB_STYLE,
@@ -246,7 +246,7 @@ class Elementor_Hero_Section_Widget extends \Elementor\Widget_Base {
 				'label' => esc_html__( 'Background Color', 'elementor-hero-section-widget' ),
 				'type' => \Elementor\Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .hero-section' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}} .home-service-widget' => 'background-color: {{VALUE}};',
 				],
 			]
 		);

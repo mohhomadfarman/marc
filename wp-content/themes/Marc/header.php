@@ -1,17 +1,52 @@
-<?php
-/**
- * Theme Header
- */
-?><!DOCTYPE html>
+
+<!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
     <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php bloginfo( 'name' ); ?> - <?php bloginfo( 'description' ); ?></title>
+    
+    <!-- Dynamic Title -->
+    <title><?php wp_title(); ?></title>
+
+
+    <!-- Meta Description (Customizable) -->
+    <meta name="description" content="<?php echo esc_attr(get_theme_mod('seo_meta_description', get_bloginfo('description'))); ?>">
+
+    <!-- Open Graph Meta Tags for Social Sharing -->
+    <meta property="og:title" content="<?php echo esc_attr(get_bloginfo('name')); ?>">
+    <meta property="og:description" content="<?php echo esc_attr(get_theme_mod('seo_meta_description', get_bloginfo('description'))); ?>">
+    <meta property="og:image" content="<?php echo esc_url(get_theme_mod('seo_og_image', get_template_directory_uri() . '/assets/og-image.jpg')); ?>">
+    <meta property="og:url" content="<?php echo esc_url(home_url('/')); ?>">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="<?php echo esc_attr(get_bloginfo('name')); ?>">
+    <meta name="twitter:description" content="<?php echo esc_attr(get_theme_mod('seo_meta_description', get_bloginfo('description'))); ?>">
+    <meta name="twitter:image" content="<?php echo esc_url(get_theme_mod('seo_og_image', get_template_directory_uri() . '/assets/og-image.jpg')); ?>">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="<?php echo esc_url(home_url('/')); ?>">
+
+    <!-- Schema Markup for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Website",
+        "name": "<?php echo esc_attr(get_bloginfo('name')); ?>",
+        "url": "<?php echo esc_url(home_url('/')); ?>",
+        "logo": "<?php echo esc_url(get_theme_mod('seo_og_image', get_template_directory_uri() . '/assets/og-image.jpg')); ?>"
+    }
+    </script>
+    <?php theme_aioseo_breadcrumbs(); ?>
+
+    <!-- Favicon -->
+    <link rel="icon" href="<?php echo esc_url(get_theme_mod('seo_favicon', get_template_directory_uri() . '/assets/favicon.ico')); ?>" type="image/x-icon">
+
     <?php wp_head(); ?>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
-<body <?php body_class(); ?> >
+<body <?php body_class(); ?>>
     <!-- Top Bar -->
     <div class="top-bar bg-light py-2">
         <div class="container d-flex justify-content-between align-items-center">
@@ -132,3 +167,17 @@ color:  #FFFFFF;
             </div>
         </nav>
     </header>
+<script>
+   const navbarDropDown = document.getElementsByClassName('dropdown-toggle')[0];
+
+if (navbarDropDown) {
+    navbarDropDown.addEventListener('click', function () {
+        const dropdownMenu = this.nextElementSibling; // Assumes the dropdown menu is the next sibling
+
+        if (dropdownMenu) {
+            dropdownMenu.classList.toggle('show'); // Bootstrap uses 'show' class to display dropdowns
+        }
+    });
+}
+
+    </script>

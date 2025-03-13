@@ -215,7 +215,7 @@ if ( ! class_exists( 'WP_Bootstrap_Navwalker' ) ) :
 				$atts['href']          = '#';
 				$atts['data-toggle']   = 'dropdown';
 				$atts['aria-expanded'] = 'false';
-				$atts['class']         = 'dropdown-toggle nav-link';
+				$atts['class']         = 'dropdown-toggle nav-link meinlink text-white';
 				$atts['id']            = 'menu-item-dropdown-' . $item->ID;
 			} else {
 				if ( true === $this->has_schema ) {

@@ -181,5 +181,10 @@ function custom_footer_settings($wp_customize) {
 
 add_action('customize_register', 'custom_footer_settings');
 
+function theme_aioseo_breadcrumbs() {
+    if ( function_exists( 'aioseo_breadcrumbs' ) ) {
+        aioseo_breadcrumbs();
+    }
+}
 
 ?>

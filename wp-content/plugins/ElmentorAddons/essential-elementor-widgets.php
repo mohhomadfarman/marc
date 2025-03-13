@@ -30,10 +30,14 @@ function register_oembed_widget( $widgets_manager ) {
 
     require_once( __DIR__ . '/widgets/oembed-widget.php' );
     require_once( __DIR__ . '/widgets/Header-widget.php' );
+    require_once( __DIR__ . '/widgets/Marc_slider-widget.php' );
+    require_once( __DIR__ . '/widgets/rating-widget.php' );
 
     // Register widget
     $widgets_manager->register( new \Elementor_Hero_Section_Widget() );
     $widgets_manager->register( new \Header_Widget() );
+    $widgets_manager->register(new \MarcSliderWidget());
+    $widgets_manager->register(new \Swiper_Reviews_Widget());
 
 
 }
